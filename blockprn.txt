@@ -1,0 +1,15 @@
+conf t
+no ip access-list standard NOPORN
+ip access-list standard  NOPORN
+DENY 66.254.0.0		0.0.255.255
+DENY 104.21.0.0 	0.0.255.255
+DENY 172.67.146.93 	0.0.0.0
+DENY 104.16.4.81	0.0.0.0
+DENY 89.222.127.8	0.0.0.0
+DENY 64.98.135.95	0.0.0.0
+DENY 208.77.0.0		0.0.255.255
+Permit Any
+Int g1
+ ip access-group NOPORN in
+end
+
